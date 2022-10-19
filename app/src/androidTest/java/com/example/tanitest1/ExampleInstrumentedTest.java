@@ -1,6 +1,8 @@
 package com.example.tanitest1;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -22,5 +24,10 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.tanitest1", appContext.getPackageName());
+    }
+
+    public void turnBack(View v){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }
