@@ -13,13 +13,13 @@ public class Model {
     private String status;
     private String enable;
     private String disable;
-    private Date time;
+    private String time;
     private String password;
 
     //Constructors
     public Model() {}
 
-    public Model(int id, String number, String arm, String disarm, String night, String day, String status, String enable, String disable, Date time, String password) {
+    public Model(int id, String number, String arm, String disarm, String night, String day, String status, String enable, String disable, String time, String password) {
         this.id = id;
         this.number = number;
         this.arm = arm;
@@ -105,11 +105,11 @@ public class Model {
         this.disable = disable;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
@@ -119,5 +119,22 @@ public class Model {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "id=" + id +
+                ", number='" + number + '\'' +
+                ", arm='" + arm + '\'' +
+                ", disarm='" + disarm + '\'' +
+                ", night='" + night + '\'' +
+                ", day='" + day + '\'' +
+                ", status='" + status + '\'' +
+                ", enable='" + enable + '\'' +
+                ", disable='" + disable + '\'' +
+                ", time='" + time + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

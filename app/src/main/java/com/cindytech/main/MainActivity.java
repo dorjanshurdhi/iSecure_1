@@ -3,7 +3,6 @@ package com.cindytech.main;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.cindytech.main.alarm_setting;
 import com.example.tanitest1.R;
 import com.example.tanitest1.databinding.ActivityMainBinding;
 
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Go SETTINGS
     public void goToSetting(View v){
-        Intent i = new Intent(this, alarm_setting.class);
+        Intent i = new Intent(this, Alarm_Settings.class);
         startActivity(i);
     }
 

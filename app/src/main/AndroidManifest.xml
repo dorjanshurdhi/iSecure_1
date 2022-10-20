@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name="com.cindytech.main.alarm_setting"
+            android:name="com.cindytech.main.Alarm_Settings"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
