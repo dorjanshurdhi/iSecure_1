@@ -1,8 +1,10 @@
-package com.example.tanitest1;
+package com.cindytech.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tanitest1.R;
 
 public class about extends AppCompatActivity {
 

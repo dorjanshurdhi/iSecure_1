@@ -1,26 +1,24 @@
-package com.example.tanitest1;
+package com.cindytech.main;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.cindytech.main.alarm_setting;
+import com.example.tanitest1.R;
+import com.example.tanitest1.databinding.ActivityMainBinding;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.tanitest1.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+
+    //references to buttons and other controls on the layout
+    Button btn_add, btn_save;
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;

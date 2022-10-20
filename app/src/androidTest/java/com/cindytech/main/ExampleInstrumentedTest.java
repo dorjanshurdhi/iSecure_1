@@ -1,4 +1,4 @@
-package com.example.tanitest1;
+package com.cindytech.main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
+
+import com.cindytech.main.MainActivity;
 
 /**
  * Instrumented test, which will execute on an Android device.

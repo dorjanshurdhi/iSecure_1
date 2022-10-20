@@ -1,14 +1,16 @@
-package com.example.tanitest1;
+package com.cindytech.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class alarm_setting extends AppCompatActivity {
+import com.example.tanitest1.R;
+
+public class settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alarm_setting);
+        setContentView(R.layout.activity_settings);
     }
 }

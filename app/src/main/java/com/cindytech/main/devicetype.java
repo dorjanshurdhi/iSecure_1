@@ -1,14 +1,16 @@
-package com.example.tanitest1;
+package com.cindytech.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class home extends AppCompatActivity {
+import com.example.tanitest1.R;
+
+public class devicetype extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_notification_tone);
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".alarm_setting">
+    tools:context="com.cindytech.main.alarm_setting">
 
     <TextView
         android:id="@+id/textView24"
@@ -228,10 +228,13 @@
 
     <Button
         android:id="@+id/button"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        app:icon="@android:drawable/ic_dialog_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:text="SAVE"
+        android:onClick="save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
