@@ -1,6 +1,8 @@
-package com.example.tanitest1;
+package com.cindytech.main;
 
 import android.content.Context;
+import android.content.Intent;
+import android.view.View;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -9,6 +11,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
+
+import com.cindytech.main.MainActivity;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -22,5 +26,10 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.tanitest1", appContext.getPackageName());
+    }
+
+    public void turnBack(View v){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }

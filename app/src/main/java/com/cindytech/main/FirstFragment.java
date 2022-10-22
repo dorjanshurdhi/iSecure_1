@@ -1,4 +1,4 @@
-package com.example.tanitest1;
+package com.cindytech.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.tanitest1.R;
 import com.example.tanitest1.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {

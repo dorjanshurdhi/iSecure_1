@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".alarm_setting">
+    tools:context="com.cindytech.main.Alarm_Settings">
 
     <TextView
         android:id="@+id/textView24"
@@ -107,7 +107,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName22"
+        android:id="@+id/et_number"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName25"
+        android:id="@+id/et_night"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -131,7 +131,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName24"
+        android:id="@+id/et_disarm"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -143,7 +143,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName28"
+        android:id="@+id/et_enable"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -155,7 +155,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName27"
+        android:id="@+id/et_status"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -167,7 +167,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName23"
+        android:id="@+id/et_arm"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -179,7 +179,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName26"
+        android:id="@+id/et_day"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -191,7 +191,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName29"
+        android:id="@+id/et_disable"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -203,7 +203,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName30"
+        android:id="@+id/et_time"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -215,7 +215,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName31"
+        android:id="@+id/et_password"
         android:layout_width="175dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -227,11 +227,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_save"
+        style="@style/Widget.MaterialComponents.Button.Icon"
+        app:icon="@android:drawable/ic_dialog_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
         android:text="SAVE"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="589dp" />
+        android:onClick="save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
