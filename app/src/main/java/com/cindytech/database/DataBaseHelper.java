@@ -2,12 +2,21 @@ package com.cindytech.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.text.format.Time;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
 import com.cindytech.model.Model;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
@@ -31,7 +40,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // this is called the firs time a database is accessed. There should be code in here to create a new database.
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + MODEL_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_MODEL_NUMBER + " TEXT, " + COLUMN_MODEL_ARM + " TEXT, " + COLUMN_MODEL_DISARM + " TEXT , " + COLUMN_MODEL_NIGHT + " TEXT, " + COLUMN_MODEL_DAY + " TEXT, " + COLUMN_MODEL_STATUS + " TEXT, " + COLUMN_MODEL_ENABLE + " TEXT, " + COLUMN_MODEL_DISABLE + " TEXT, " + COLUMN_MODEL_TIME + " TEXT, " + COLUMN_MODEL_PASSWORD + " TEXT)";
+        String createTableStatement = "CREATE TABLE " + MODEL_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY, " + COLUMN_MODEL_NUMBER + " TEXT, " + COLUMN_MODEL_ARM + " TEXT, " + COLUMN_MODEL_DISARM + " TEXT , " + COLUMN_MODEL_NIGHT + " TEXT, " + COLUMN_MODEL_DAY + " TEXT, " + COLUMN_MODEL_STATUS + " TEXT, " + COLUMN_MODEL_ENABLE + " TEXT, " + COLUMN_MODEL_DISABLE + " TEXT, " + COLUMN_MODEL_TIME + " TEXT, " + COLUMN_MODEL_PASSWORD + " TEXT)";
         db.execSQL(createTableStatement);
     }
 
@@ -42,10 +51,80 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //update Model based on existing ID
+    public void updateModel(Model model) {
+
+        ///String updateSQL = "Update " + MODEL_TABLE + " SET Column1 = someValue WHERE columnId = "+ someValue;
+
+        //myDataBase.execSQL(strSQL);
+        // calling a method to get writable database.
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        // on below line we are calling a update method to update our database and passing our values.
+        // and we are comparing it with name of our course which is stored in original name variable.
+
+        String currentTime = new SimpleDateFormat("HH:mm").format(new Date());
+        Log.d("koha", currentTime);
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        //cv.put(COLUMN_ID, 1);
+        cv.put(COLUMN_MODEL_NUMBER, model.getNumber());
+        cv.put(COLUMN_MODEL_ARM, model.getArm());
+        cv.put(COLUMN_MODEL_DISARM, model.getDisarm());
+        cv.put(COLUMN_MODEL_NIGHT, model.getNight());
+        cv.put(COLUMN_MODEL_DAY, model.getDay());
+        cv.put(COLUMN_MODEL_STATUS, model.getStatus());
+        cv.put(COLUMN_MODEL_ENABLE, model.getEnable());
+        cv.put(COLUMN_MODEL_DISABLE, model.getDisable());
+        cv.put(COLUMN_MODEL_TIME, currentTime);
+        cv.put(COLUMN_MODEL_PASSWORD, model.getPassword());
+
+        String ID = "1";
+
+        db.update(MODEL_TABLE, cv, "ID = ?", new String[]{ID});
+        db.close();
+
+        /*long insert = db.insert(MODEL_TABLE, null, cv);
+        if (insert == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }*/
+    }
+
+    public Cursor uploadSettings(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        //String qry = "SELECT * FROM "+TABLE_NAME+" WHERE ID="+id;
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+MODEL_TABLE+" WHERE ID=1 ",null);
+        Model model = new Model();
+        model.setId(1);
+        model.setNumber(cursor.getString(1));
+        model.setArm(cursor.getString(2));
+        model.setDisarm(cursor.getString(3));
+        model.setNight(cursor.getString(4));
+        model.setDay(cursor.getString(5));
+        model.setStatus(cursor.getString(6));
+        model.setEnable(cursor.getString(7));
+        model.setDisable(cursor.getString(8));
+        model.setTime(cursor.getString(9));
+        model.setPassword(cursor.getString(10));
+
+        //Log.d("outputttt" , model.toString());
+        return cursor;
+    }
+
+
+    //add one signle model method
     public boolean addOne(Model model){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
+
+
+        //cv.put(COLUMN_ID, 1);
         cv.put(COLUMN_MODEL_NUMBER, model.getNumber());
         cv.put(COLUMN_MODEL_ARM, model.getArm());
         cv.put(COLUMN_MODEL_DISARM, model.getDisarm());
@@ -56,6 +135,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(COLUMN_MODEL_DISABLE, model.getDisable());
         cv.put(COLUMN_MODEL_TIME, model.getTime());
         cv.put(COLUMN_MODEL_PASSWORD, model.getPassword());
+
+
 
         long insert = db.insert(MODEL_TABLE, null, cv);
         if (insert == -1) {
