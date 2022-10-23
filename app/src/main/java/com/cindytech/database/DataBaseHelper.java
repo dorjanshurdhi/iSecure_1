@@ -99,7 +99,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         //String qry = "SELECT * FROM "+TABLE_NAME+" WHERE ID="+id;
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+MODEL_TABLE+" WHERE ID=1 ",null);
-        Model model = new Model();
+        /*Model model = new Model();
         model.setId(1);
         model.setNumber(cursor.getString(1));
         model.setArm(cursor.getString(2));
@@ -110,7 +110,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         model.setEnable(cursor.getString(7));
         model.setDisable(cursor.getString(8));
         model.setTime(cursor.getString(9));
-        model.setPassword(cursor.getString(10));
+        model.setPassword(cursor.getString(10));*/
 
         //Log.d("outputttt" , model.toString());
         return cursor;
