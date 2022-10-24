@@ -33,6 +33,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="DISABLE"
+        android:onClick="sendDisable"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
@@ -43,6 +44,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="ENABLE"
+        android:onClick="sendEnable"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
@@ -67,27 +69,29 @@
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btn_arm"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="32dp"
         android:text="ARM"
+        android:onClick="sendArm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btn_disarm"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginBottom="32dp"
         android:text="DISARM"
+        android:onClick="sendDisarm"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintStart_toEndOf="@+id/button8" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_status"
+        app:layout_constraintStart_toEndOf="@+id/btn_arm" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btn_status"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginEnd="24dp"
@@ -97,13 +101,12 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
-        android:layout_width="232dp"
-        android:layout_height="400dp"
+        android:layout_width="237dp"
+        android:layout_height="363dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,7 +118,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="32dp"
         android:text="LAST EVENTS"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/btn_disarm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -160,15 +163,15 @@
         app:layout_constraintStart_toEndOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btn_settings"
         style="@style/Settings"
-        android:layout_width="119dp"
-        android:layout_height="36dp"
+        android:layout_width="120dp"
+        android:layout_height="46dp"
         android:onClick="goToSetting"
         android:text="Settings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintHorizontal_bias="0.914"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="5dp" />
+        tools:layout_editor_absoluteY="6dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

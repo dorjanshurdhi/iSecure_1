@@ -42,6 +42,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTableStatement = "CREATE TABLE " + MODEL_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY, " + COLUMN_MODEL_NUMBER + " TEXT, " + COLUMN_MODEL_ARM + " TEXT, " + COLUMN_MODEL_DISARM + " TEXT , " + COLUMN_MODEL_NIGHT + " TEXT, " + COLUMN_MODEL_DAY + " TEXT, " + COLUMN_MODEL_STATUS + " TEXT, " + COLUMN_MODEL_ENABLE + " TEXT, " + COLUMN_MODEL_DISABLE + " TEXT, " + COLUMN_MODEL_TIME + " TEXT, " + COLUMN_MODEL_PASSWORD + " TEXT)";
         db.execSQL(createTableStatement);
+        Log.d("createdb", "created");
     }
 
 

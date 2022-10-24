@@ -58,6 +58,7 @@ public class Alarm_Settings extends AppCompatActivity {
             Log.d("PASSOWRD ", res.getString(10));
 
             Model model = new Model();
+
             model.setId(1);
             model.setNumber(res.getString(1));
             model.setArm(res.getString(2));
@@ -82,7 +83,6 @@ public class Alarm_Settings extends AppCompatActivity {
             et_day.setText(model.getDay());
             et_time.setText(model.getTime());
             et_password.setText(model.getPassword());
-
         }
 
 
@@ -112,19 +112,16 @@ public class Alarm_Settings extends AppCompatActivity {
                     model = new Model(-1, "error", "error"," error", "error", "error", "error", "error", "error", "error", "error");
                 }
 
-
                 //boolean success = dataBaseHelper.addOne(model);
                 dataBaseHelper.updateModel(model);
-
                 Toast.makeText(Alarm_Settings.this, "SUCCESS", Toast.LENGTH_SHORT).show();
-
                 turnBack();
             }
         });
     }
 
 
-    public void turnBack (){
+    public void turnBack(){
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
